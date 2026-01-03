@@ -93,10 +93,46 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 }
 
+def downloadFile(String urlString, File destFile) {
+    if (!destFile.parentFile.exists()) {
+        destFile.parentFile.mkdirs()
+    }
+
+    URL url = new URL(urlString)
+    HttpURLConnection connection = (HttpURLConnection) url.openConnection()
+    connection.setInstanceFollowRedirects(true)
+    connection.connect()
+
+    int status = connection.getResponseCode()
+    if (status != HttpURLConnection.HTTP_OK) {
+        if (status == HttpURLConnection.HTTP_MOVED_TEMP
+            || status == HttpURLConnection.HTTP_MOVED_PERM
+            || status == HttpURLConnection.HTTP_SEE_OTHER) {
+            String newUrl = connection.getHeaderField("Location")
+            connection = (HttpURLConnection) new URL(newUrl).openConnection()
+            connection.connect()
+        }
+    }
+
+    if (connection.getResponseCode() != HttpURLConnection.HTTP_OK) {
+        throw new GradleException("Failed to download file: HTTP " + connection.getResponseCode())
+    }
+
+    destFile.withOutputStream { output ->
+        connection.inputStream.withStream { input ->
+            output << input
+        }
+    }
+}
+
 // =============================================================================
 // Helper Functions
 // =============================================================================
 import java.security.MessageDigest
+import java.net.HttpURLConnection
+import java.net.URL
+import java.nio.file.Files
+import java.nio.file.StandardCopyOption
 
 def calculateChecksum(File file) {
     MessageDigest digest = MessageDigest.getInstance("SHA-256")
@@ -128,7 +164,12 @@ task downloadNativeLibs {
                 println "Downloading from: ${downloadUrl}"
 
                 // Download the zip file
-                ant.get(src: downloadUrl, dest: zipFile)
+                // Download the zip file using robust method
+                try {
+                    downloadFile(downloadUrl, zipFile)
+                } catch (Exception e) {
+                     throw new GradleException("Download failed: ${e.message}", e)
+                }
 
                 // Verify checksum
                 def actualChecksum = calculateChecksum(zipFile)
