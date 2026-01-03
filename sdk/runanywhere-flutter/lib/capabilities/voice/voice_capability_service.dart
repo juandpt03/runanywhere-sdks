@@ -2,7 +2,7 @@
 ///
 /// Main capability coordinator for voice processing using the component system.
 /// Matches iOS VoiceCapabilityService.swift from Capabilities/Voice/Services/
-library voice_capability_service;
+library;
 
 import 'dart:async';
 import 'dart:typed_data';

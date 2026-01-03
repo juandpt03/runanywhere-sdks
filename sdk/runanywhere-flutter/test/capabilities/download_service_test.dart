@@ -1,6 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:runanywhere/capabilities/download/download_service.dart';
 import 'package:runanywhere/capabilities/registry/registry_service.dart';
+import 'package:runanywhere/core/protocols/downloading/download_progress.dart';
+import 'package:runanywhere/core/protocols/downloading/download_state.dart';
+import 'package:runanywhere/core/protocols/downloading/download_task.dart';
 
 void main() {
   group('DownloadService Tests', () {
@@ -20,10 +23,17 @@ void main() {
       const modelId = 'test-model';
       const localPath = '/path/to/model.gguf';
 
-      final task = DownloadTask.completed(modelId, localPath);
+      final task = DownloadTask(
+        id: modelId,
+        modelId: modelId,
+        progress: Stream.value(
+          DownloadProgress.completed(totalBytes: 100),
+        ),
+        result: Future.value(Uri.file(localPath)),
+      );
 
       expect(task.modelId, equals(modelId));
-      expect(await task.result, equals(localPath));
+      expect(await task.result, equals(Uri.file(localPath)));
 
       // Check progress stream
       final progressList = <DownloadProgress>[];
@@ -32,7 +42,7 @@ void main() {
       }
 
       expect(progressList.length, equals(1));
-      expect(progressList.first.state, equals(DownloadState.completed));
+      expect(progressList.first.state, equals(const DownloadStateCompleted()));
     });
   });
 }

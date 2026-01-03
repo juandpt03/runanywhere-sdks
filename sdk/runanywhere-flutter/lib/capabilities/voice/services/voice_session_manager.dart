@@ -1,7 +1,7 @@
 /// Voice Session Manager
 ///
 /// Matches iOS VoiceSessionManager.swift from Capabilities/Voice/Services/
-library voice_session_manager;
+library;
 
 import '../../../foundation/logging/sdk_logger.dart';
 import '../../../components/stt/stt_component.dart' show STTOutput;

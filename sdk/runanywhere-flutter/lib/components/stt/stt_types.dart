@@ -3,7 +3,7 @@
 /// Matches iOS STT types from STTComponent.swift.
 /// These types are defined separately to avoid circular dependencies
 /// between module_registry.dart and stt_component.dart.
-library stt_types;
+library;
 
 import '../../core/models/audio_format.dart';
 import '../llm/llm_component.dart' show LLMFramework;

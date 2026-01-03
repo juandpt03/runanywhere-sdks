@@ -2,7 +2,7 @@
 ///
 /// Events emitted during voice pipeline processing.
 /// Matches iOS ModularPipelineEvent from the VoiceAgent handlers.
-library modular_pipeline_event;
+library;
 
 import '../../../components/speaker_diarization/speaker_diarization_component.dart'
     show SpeakerInfo;

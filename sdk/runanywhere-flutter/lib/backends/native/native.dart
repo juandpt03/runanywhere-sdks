@@ -8,7 +8,7 @@
 /// - [NativeBackend]: Main FFI wrapper for the C API
 /// - [PlatformLoader]: Platform-specific library loading
 /// - FFI type definitions for C interop
-library runanywhere_native;
+library;
 
 export 'native_backend.dart';
 export 'platform_loader.dart';

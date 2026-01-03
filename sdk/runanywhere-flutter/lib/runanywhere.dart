@@ -2,7 +2,7 @@
 ///
 /// Privacy-first, on-device AI SDK for Flutter that brings powerful language
 /// models directly to your applications.
-library runanywhere;
+library;
 
 export 'public/runanywhere.dart';
 export 'public/models/models.dart';

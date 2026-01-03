@@ -2,7 +2,7 @@
 ///
 /// Handles progressive TTS for streaming text generation.
 /// Matches iOS StreamingTTSHandler.swift from Capabilities/Voice/Operations/
-library streaming_tts_handler;
+library;
 
 import 'dart:async';
 

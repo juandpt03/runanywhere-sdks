@@ -1,7 +1,7 @@
 /// Audio Pipeline State Management
 ///
 /// Matches iOS AudioPipelineState.swift from Capabilities/Voice/
-library audio_pipeline_state;
+library;
 
 import 'dart:async';
 import '../../foundation/logging/sdk_logger.dart';

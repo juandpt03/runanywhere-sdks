@@ -31,7 +31,7 @@ class VoiceAudioChunk {
     this.isFinal = false,
   });
 
-  /// Create from a List<double> for convenience
+  /// Create from a List double for convenience
   factory VoiceAudioChunk.fromDoubles({
     required List<double> samples,
     required Duration timestamp,

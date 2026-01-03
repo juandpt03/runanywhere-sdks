@@ -31,7 +31,7 @@
 /// // Register native providers with the SDK
 /// await NativeProviderRegistration.registerAll();
 /// ```
-library native;
+library;
 
 // Core FFI types and constants
 export 'ffi_types.dart';

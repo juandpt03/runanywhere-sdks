@@ -275,7 +275,7 @@ class WakeWordComponent extends BaseComponent<core.WakeWordService> {
     );
   }
 
-  /// Process audio data in simpler format (List<int>)
+  /// Process audio data in simpler format (List int)
   Future<WakeWordOutput> processAudio(List<int> audioData) async {
     final floatBuffer = Float32List.fromList(
       audioData.map((e) => e.toDouble() / 32768.0).toList(),

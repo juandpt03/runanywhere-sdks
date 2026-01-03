@@ -38,7 +38,7 @@
 /// - Q2_K, Q3_K_S/M/L, Q4_0/1, Q4_K_S/M
 /// - Q5_0/1, Q5_K_S/M, Q6_K, Q8_0
 /// - IQ2_XXS/XS, IQ3_S/XXS, IQ4_NL/XS
-library runanywhere_llamacpp;
+library;
 
 // Backend entry point
 export 'llamacpp_backend.dart';

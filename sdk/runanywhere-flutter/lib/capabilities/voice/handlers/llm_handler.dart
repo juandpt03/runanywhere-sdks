@@ -2,7 +2,7 @@
 ///
 /// Handles Language Model processing in the voice pipeline.
 /// Matches iOS VoiceLLMHandler.swift from Capabilities/Voice/Handlers/
-library llm_handler;
+library;
 
 import 'dart:async';
 

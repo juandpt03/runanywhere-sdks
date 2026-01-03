@@ -2,7 +2,7 @@
 ///
 /// Handles Text-to-Speech processing in the voice pipeline.
 /// Matches iOS TTSHandler.swift from Capabilities/Voice/Handlers/
-library tts_handler;
+library;
 
 import 'dart:async';
 

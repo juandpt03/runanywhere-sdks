@@ -3,7 +3,7 @@
 /// Protocol for audio segmentation strategies.
 /// Allows custom implementation while providing default behavior.
 /// Matches iOS AudioSegmentationStrategy from Capabilities/Voice/Strategies/AudioSegmentation/AudioSegmentationStrategy.swift.
-library audio_segmentation_strategy;
+library;
 
 /// Protocol for audio segmentation strategies
 /// Allows custom implementation while providing default behavior

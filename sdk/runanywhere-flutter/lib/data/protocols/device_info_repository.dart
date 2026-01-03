@@ -3,7 +3,7 @@ import 'dart:async';
 import '../models/device_info_data.dart';
 
 /// Device information repository protocol for specialized device operations
-/// DeviceInfoRepositoryImpl will implement both this AND Repository<DeviceInfoData>
+/// DeviceInfoRepositoryImpl will implement both this AND Repository DeviceInfoData
 /// Matches iOS DeviceInfoRepository from DeviceInfoRepository.swift
 abstract class DeviceInfoRepository {
   /// Fetch current device information

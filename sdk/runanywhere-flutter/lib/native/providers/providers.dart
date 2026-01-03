@@ -2,7 +2,7 @@
 ///
 /// These providers wrap the native C API via FFI to provide
 /// on-device AI capabilities (STT, TTS, LLM, VAD).
-library providers;
+library;
 
 export 'native_stt_provider.dart';
 export 'native_tts_provider.dart';

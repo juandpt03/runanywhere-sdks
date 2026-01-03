@@ -2,7 +2,7 @@
 ///
 /// Handles speaker diarization processing in the voice pipeline.
 /// Matches iOS SpeakerDiarizationHandler from Capabilities/Voice/Handlers/SpeakerDiarizationHandler.swift.
-library speaker_diarization_handler;
+library;
 
 import 'dart:async';
 

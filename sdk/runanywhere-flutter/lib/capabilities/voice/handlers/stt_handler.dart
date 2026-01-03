@@ -2,7 +2,7 @@
 ///
 /// Handles Speech-to-Text processing in the voice pipeline.
 /// Matches iOS STTHandler.swift from Capabilities/Voice/Handlers/
-library stt_handler;
+library;
 
 import 'dart:async';
 import 'dart:typed_data';

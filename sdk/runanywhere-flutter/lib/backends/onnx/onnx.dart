@@ -31,7 +31,7 @@
 /// ./scripts/flutter/setup.sh --platform ios /path/to/runanywhere-flutter
 /// ./scripts/flutter/setup.sh --platform android /path/to/runanywhere-flutter
 /// ```
-library runanywhere_onnx;
+library;
 
 // Backend entry point
 export 'onnx_backend.dart';

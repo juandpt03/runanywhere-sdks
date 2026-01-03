@@ -18,7 +18,7 @@ Archive _decodeZip(Uint8List bytes) {
 
 /// Decode tar.gz bytes (runs in background isolate)
 Archive _decodeTarGz(Uint8List bytes) {
-  final decompressed = GZipDecoder().decodeBytes(bytes);
+  final decompressed = const GZipDecoder().decodeBytes(bytes);
   return TarDecoder().decodeBytes(decompressed);
 }
 

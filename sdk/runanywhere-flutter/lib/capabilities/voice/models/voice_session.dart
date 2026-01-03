@@ -1,7 +1,7 @@
 /// Voice Session Models
 ///
 /// Matches iOS VoiceSession.swift from Capabilities/Voice/Models/
-library voice_session;
+library;
 
 import '../../../components/stt/stt_component.dart' show STTOutput;
 

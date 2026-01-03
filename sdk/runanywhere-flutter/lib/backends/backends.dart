@@ -27,7 +27,7 @@
 /// ```dart
 /// import 'package:runanywhere/backends/backends.dart';
 /// ```
-library runanywhere_backends;
+library;
 
 // ONNX Runtime backend (STT, TTS, VAD)
 export 'onnx/onnx.dart';
